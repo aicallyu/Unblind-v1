@@ -327,7 +327,7 @@ const article001: ArticleContent = {
       type: 'image',
       src: 'https://cdn.marblism.com/PIQyfShs7KX.webp',
       alt: 'Business professional stands before city lights and holographic data',
-      caption: '// AI-augmented perception: seeing what was always invisible',
+      caption: '// AI-augmented perception: Seeing what was always invisible',
     },
     {
       type: 'paragraph',
@@ -1652,7 +1652,7 @@ const article006: ArticleContent = {
       type: 'image',
       src: 'https://cdn.marblism.com/j5TIz14ol6F.webp',
       alt: 'Extreme close-up of a human eye with a glitching digital iris, symbolizing flawed executive perception and simulation vs reality',
-      caption: '// Flawed executive perception: simulation vs reality',
+      caption: '// Flawed executive perception: Simulation vs reality',
     },
     {
       type: 'paragraph',
@@ -1867,11 +1867,11 @@ const article006: ArticleContent = {
     },
     {
       type: 'paragraph',
-      content: 'Evolution optimized for: speed, coherence, social belonging, threat avoidance.',
+      content: 'Evolution optimized for: Speed, coherence, social belonging, threat avoidance.',
     },
     {
       type: 'paragraph',
-      content: 'Not for: signal integration, pattern tracking over time, consistency under abstraction, multi-channel awareness.',
+      content: 'Not for: Signal integration, pattern tracking over time, consistency under abstraction, multi-channel awareness.',
     },
     {
       type: 'paragraph',
@@ -2587,7 +2587,7 @@ const article001ES: ArticleContent = {
       type: 'image',
       src: 'https://cdn.marblism.com/PIQyfShs7KX.webp',
       alt: 'Profesional de negocios ante luces de la ciudad y datos holográficos',
-      caption: '// Percepción aumentada por IA: viendo lo que siempre fue invisible',
+      caption: '// Percepción aumentada por IA: Viendo lo que siempre fue invisible',
     },
     {
       type: 'paragraph',
@@ -5480,7 +5480,7 @@ const article006ES: ArticleContent = {
       type: 'image',
       src: 'https://cdn.marblism.com/j5TIz14ol6F.webp',
       alt: 'Primer plano extremo de un ojo humano con iris digital fallando',
-      caption: '// Percepción ejecutiva defectuosa: simulación vs realidad',
+      caption: '// Percepción ejecutiva defectuosa: Simulación vs realidad',
     },
     {
       type: 'paragraph',
@@ -5695,11 +5695,11 @@ const article006ES: ArticleContent = {
     },
     {
       type: 'paragraph',
-      content: 'La evolución optimizó para: velocidad, coherencia, pertenencia social, evitación de amenazas.',
+      content: 'La evolución optimizó para: Velocidad, coherencia, pertenencia social, evitación de amenazas.',
     },
     {
       type: 'paragraph',
-      content: 'No para: integración de señales, seguimiento de patrones en el tiempo, consistencia bajo abstracción, conciencia multicanal.',
+      content: 'No para: Integración de señales, seguimiento de patrones en el tiempo, consistencia bajo abstracción, conciencia multicanal.',
     },
     {
       type: 'paragraph',
