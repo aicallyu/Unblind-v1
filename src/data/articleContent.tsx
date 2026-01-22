@@ -1651,7 +1651,7 @@ const article006: ArticleContent = {
     {
       type: 'image',
       src: 'https://cdn.marblism.com/j5TIz14ol6F.webp',
-      alt: 'Extreme close-up of a human eye with a glitching digital iris',
+      alt: 'Extreme close-up of a human eye with a glitching digital iris, symbolizing flawed executive perception and simulation vs reality',
       caption: '// Flawed executive perception: simulation vs reality',
     },
     {
@@ -1703,7 +1703,7 @@ const article006: ArticleContent = {
     {
       type: 'image',
       src: 'https://cdn.marblism.com/R9e_BTj-GBH.webp',
-      alt: 'Empty boardroom table reflecting distorted silhouettes',
+      alt: 'Empty boardroom table reflecting distorted silhouettes of unseen executives, highlighting hidden communication failures in high-stakes environments',
       caption: '// Hidden communication failures in high-stakes environments',
     },
     {
@@ -1760,7 +1760,7 @@ const article006: ArticleContent = {
     {
       type: 'image',
       src: 'https://cdn.marblism.com/sBH3zUMJe0f.webp',
-      alt: 'Silhouetted executive overlooking a city at night with a deceptive reflection',
+      alt: 'Silhouetted executive in a suit overlooking a city at night, with a deceptive reflection, illustrating leadership blind spots and unseen risks',
       caption: '// Leadership blind spots and unseen risks',
     },
     {
