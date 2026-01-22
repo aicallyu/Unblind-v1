@@ -124,7 +124,7 @@ export const articles: Article[] = [
     category: categories['perception-vs-reality'],
     date: 'JANUARY 21, 2026',
     readTime: '16 MIN READ',
-    heroImage: 'https://cdn.marblism.com/j5TIz14ol6F.webp',
+    heroImage: 'https://cdn.marblism.com/nvQQMuCo1kZ.webp',
   },
 ]
 
