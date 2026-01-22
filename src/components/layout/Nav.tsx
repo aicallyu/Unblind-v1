@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '@/i18n'
 import LanguageSelector from '@/components/LanguageSelector'
+import Logo from './Logo'
 
 interface NavProps {
   isArticlePage?: boolean
@@ -22,10 +23,10 @@ export default function Nav({ isArticlePage = false }: NavProps) {
     <nav>
       <div className="container">
         <div className="nav-content flex justify-between items-center">
-          <Link to="/" className="logo" aria-label="Extend Perception - Home">
-            <span className="logo-text" style={{ fontWeight: 800 }}>
-              <span style={{ color: 'var(--accent-cyan)' }}>X</span>
-              <span style={{ color: 'var(--accent-purple)' }}>P</span>
+          <Link to="/" className="logo flex items-center gap-3" aria-label="Extend Perception - Home">
+            <Logo size="sm" />
+            <span className="hidden md:block font-display text-sm font-semibold tracking-wide opacity-70">
+              Extend Perception
             </span>
           </Link>
           <ul className="nav-links">
