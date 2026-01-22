@@ -1,12 +1,14 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useLanguage } from '@/i18n'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function RotatingSnakes() {
   const sectionRef = useRef<HTMLElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     // Draw the rotating snakes illusion
@@ -77,14 +79,14 @@ export default function RotatingSnakes() {
         <h2
           className="perception-title font-display text-4xl font-extrabold mb-4"
         >
-          The Rotating Snakes
+          {t.illusions.rotatingSnakes.title}
         </h2>
 
         <p
           className="perception-subtitle text-[17px] mb-[50px] max-w-[600px] mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          This image is completely static. Your brain creates the motion. Look at different parts and watch the "snakes" rotate.
+          {t.illusions.rotatingSnakes.subtitle}
         </p>
 
         <div
@@ -111,7 +113,7 @@ export default function RotatingSnakes() {
         >
           <p className="m-0 text-[15px] leading-[1.7]" style={{ color: 'var(--text-secondary)' }}>
             <strong style={{ color: 'var(--accent-cyan)' }}>What's happening:</strong>{' '}
-            The Rotating Snakes illusion (Akiyoshi Kitaoka) uses specific color sequences and contrast gradients to trigger motion-detecting neurons in your visual cortex. Your brain literally perceives movement where none exists—proof that perception is construction, not reception.
+            {t.illusions.rotatingSnakes.instruction}
           </p>
         </div>
       </div>

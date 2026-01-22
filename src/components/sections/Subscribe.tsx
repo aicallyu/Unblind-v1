@@ -105,7 +105,7 @@ export default function Subscribe() {
               className="subscribe-note mt-7 text-[13px] font-mono tracking-[0.08em]"
               style={{ color: 'var(--text-muted)' }}
             >
-              // JOIN FOUNDERS, EXECUTIVES, AND SYSTEM THINKERS
+              // {t.subscribe.note}
             </p>
           </div>
         </div>

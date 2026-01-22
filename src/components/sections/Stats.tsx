@@ -1,14 +1,22 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { stats } from '@/data/articles'
+import { useLanguage } from '@/i18n'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const statsData = [
+  { target: 90, key: 'decisions' as const },
+  { target: 11, key: 'bitsPerSecond' as const },
+  { target: 40, key: 'conscious' as const },
+  { target: 35, key: 'dailyDecisions' as const },
+]
+
 export default function Stats() {
   const sectionRef = useRef<HTMLElement>(null)
-  const [counters, setCounters] = useState<number[]>(stats.map(() => 0))
+  const [counters, setCounters] = useState<number[]>(statsData.map(() => 0))
   const hasAnimated = useRef(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     if (!sectionRef.current) return
@@ -36,7 +44,7 @@ export default function Stats() {
           })
 
           // Counter animation
-          const target = stats[i]?.target ?? 0
+          const target = statsData[i]?.target ?? 0
           gsap.to(
             { val: 0 },
             {
@@ -74,9 +82,9 @@ export default function Stats() {
           className="stats-grid grid gap-10"
           style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}
         >
-          {stats.map((stat, index) => (
+          {statsData.map((stat, index) => (
             <div
-              key={stat.label}
+              key={stat.key}
               className="stat-item text-center"
             >
               <div
@@ -95,7 +103,7 @@ export default function Stats() {
                 className="stat-label font-mono text-xs tracking-[0.15em] uppercase"
                 style={{ color: 'var(--text-muted)' }}
               >
-                {stat.label}
+                {t.stats.items[stat.key]}
               </div>
             </div>
           ))}
