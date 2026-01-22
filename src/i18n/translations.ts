@@ -72,6 +72,7 @@ export interface Translations {
   stats: {
     label: string
     title: string
+    estimated: string
     items: {
       decisions: string
       bitsPerSecond: string
@@ -310,6 +311,7 @@ export const translations: Record<Language, Translations> = {
     stats: {
       label: 'THE NUMBERS',
       title: 'The Perception Gap',
+      estimated: 'estimated',
       items: {
         decisions: 'of decisions made unconsciously',
         bitsPerSecond: 'bits of info per second',
@@ -539,6 +541,7 @@ export const translations: Record<Language, Translations> = {
     stats: {
       label: 'DIE ZAHLEN',
       title: 'Die Wahrnehmungslücke',
+      estimated: 'geschätzt',
       items: {
         decisions: 'der Entscheidungen unbewusst getroffen',
         bitsPerSecond: 'Bits Info pro Sekunde',
@@ -763,6 +766,7 @@ export const translations: Record<Language, Translations> = {
     stats: {
       label: 'LOS NÚMEROS',
       title: 'La Brecha de Percepción',
+      estimated: 'estimado',
       items: {
         decisions: 'de decisiones tomadas inconscientemente',
         bitsPerSecond: 'bits de info por segundo',

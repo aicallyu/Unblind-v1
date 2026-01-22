@@ -161,20 +161,34 @@ export default function Posts() {
         }
         @media (max-width: 768px) {
           .post-item {
-            padding: 28px !important;
-            flex-wrap: wrap;
+            padding: 20px !important;
+            flex-direction: column;
+            align-items: flex-start;
           }
           .post-number {
             width: 100% !important;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
           }
           .post-image {
-            width: 60px !important;
-            height: 60px !important;
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 1 / 1;
+            margin-bottom: 16px;
+            border-radius: 16px !important;
+          }
+          .post-content {
+            width: 100%;
+          }
+          .post-title {
+            font-size: 18px !important;
           }
           .post-arrow {
-            margin-left: auto;
-            margin-top: 20px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            margin: 0;
+            width: 44px !important;
+            height: 44px !important;
           }
         }
       `}</style>

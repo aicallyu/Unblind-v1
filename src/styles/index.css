@@ -38,6 +38,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  touch-action: pan-x pan-y;
 }
 
 body {
@@ -490,10 +493,13 @@ nav {
   }
 
   .theme-toggle {
-    position: static;
-    width: 44px;
-    height: 44px;
+    position: fixed;
+    top: 12px;
+    right: 70px;
+    width: 40px;
+    height: 40px;
     font-size: 18px;
+    z-index: 200;
   }
 
   .container {
