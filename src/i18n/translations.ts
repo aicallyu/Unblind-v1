@@ -212,7 +212,7 @@ export const translations: Record<Language, Translations> = {
         highlight: 'ARRIVES',
         line2: 'BEFORE THE NOISE',
       },
-      subtitle: 'Most interventions happen too late. We work at the perception layer: before interpretation, before decisions, before action. Where reality is shaped.',
+      subtitle: 'Most interventions happen too late. We work at the perception layer: Before interpretation, before decisions, before action. Where reality is shaped.',
       cta: {
         explore: 'EXPLORE',
         subscribe: 'SUBSCRIBE',
@@ -438,7 +438,7 @@ export const translations: Record<Language, Translations> = {
         highlight: 'KOMMT',
         line2: 'VOR DEM RAUSCHEN',
       },
-      subtitle: 'Die meisten Interventionen kommen zu spät. Wir arbeiten auf der Wahrnehmungsebene: vor der Interpretation, vor den Entscheidungen, vor dem Handeln. Wo Realität geformt wird.',
+      subtitle: 'Die meisten Interventionen kommen zu spät. Wir arbeiten auf der Wahrnehmungsebene: Vor der Interpretation, vor den Entscheidungen, vor dem Handeln. Wo Realität geformt wird.',
       cta: {
         explore: 'ERKUNDEN',
         subscribe: 'ABONNIEREN',
@@ -667,7 +667,7 @@ export const translations: Record<Language, Translations> = {
         highlight: 'LLEGA',
         line2: 'ANTES DEL RUIDO',
       },
-      subtitle: 'La mayoría de las intervenciones llegan demasiado tarde. Trabajamos en la capa de percepción: antes de la interpretación, antes de las decisiones, antes de la acción. Donde se forma la realidad.',
+      subtitle: 'La mayoría de las intervenciones llegan demasiado tarde. Trabajamos en la capa de percepción: Antes de la interpretación, antes de las decisiones, antes de la acción. Donde se forma la realidad.',
       cta: {
         explore: 'EXPLORAR',
         subscribe: 'SUSCRIBIRSE',
