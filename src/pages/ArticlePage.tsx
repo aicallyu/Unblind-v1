@@ -564,21 +564,73 @@ export default function ArticlePage() {
           color: var(--accent-cyan);
         }
         @media (max-width: 768px) {
+          .nav-container {
+            padding: 0 16px !important;
+          }
           .article-header {
-            padding: 140px 24px 60px;
+            padding: 100px 16px 40px !important;
+          }
+          .article-title {
+            font-size: clamp(24px, 6vw, 36px) !important;
+          }
+          .article-subtitle {
+            font-size: 16px !important;
+          }
+          .article-meta {
+            gap: 12px !important;
           }
           .article-content {
-            padding: 0 24px 80px;
+            padding: 0 16px 60px !important;
           }
           .hero-image {
-            padding: 0 24px;
+            padding: 0 16px !important;
+            margin-bottom: 40px !important;
+          }
+          .author-section {
+            padding: 0 16px !important;
           }
           .author-box {
             flex-direction: column;
             text-align: center;
+            padding: 24px !important;
+          }
+          .author-avatar {
+            width: 64px !important;
+            height: 64px !important;
+            font-size: 24px !important;
+          }
+          .related-section {
+            padding: 40px 16px !important;
+          }
+          .related-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .subscribe-cta {
+            padding: 40px 16px !important;
+          }
+          .subscribe-box {
+            padding: 32px 20px !important;
+          }
+          .subscribe-title {
+            font-size: 24px !important;
           }
           .subscribe-form {
             flex-direction: column;
+          }
+          .subscribe-form input,
+          .subscribe-form button {
+            width: 100% !important;
+            min-width: unset !important;
+          }
+          .footer-content {
+            flex-direction: column;
+            text-align: center;
+            padding: 0 16px !important;
+            gap: 20px;
+          }
+          .footer-links {
+            flex-wrap: wrap;
+            justify-content: center;
           }
         }
       `}</style>
