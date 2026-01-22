@@ -311,7 +311,7 @@ export default function Library() {
       {/* Navigation arrows */}
       <div className="library-nav flex justify-center gap-6 mt-10 relative z-10">
         <button
-          className="nav-arrow w-[70px] h-[70px] rounded-full flex items-center justify-center text-[28px] cursor-pointer transition-all duration-500"
+          className="nav-arrow nav-arrow-left w-[70px] h-[70px] rounded-full flex items-center justify-center text-[28px] cursor-pointer transition-all duration-500"
           style={{
             border: '2px solid rgba(255, 255, 255, 0.1)',
             background: 'rgba(0, 0, 0, 0.3)',
@@ -323,12 +323,13 @@ export default function Library() {
           ←
         </button>
         <button
-          className="nav-arrow w-[70px] h-[70px] rounded-full flex items-center justify-center text-[28px] cursor-pointer transition-all duration-500"
+          className="nav-arrow nav-arrow-right w-[70px] h-[70px] rounded-full flex items-center justify-center text-[28px] cursor-pointer transition-all duration-500"
           style={{
             border: '2px solid rgba(255, 255, 255, 0.1)',
             background: 'rgba(0, 0, 0, 0.3)',
             color: 'var(--text-secondary)',
             backdropFilter: 'blur(10px)',
+            animation: 'arrowPulse 3.5s ease-in-out infinite',
           }}
           onClick={() => goToBook(currentIndex + 1)}
         >
@@ -337,12 +338,30 @@ export default function Library() {
       </div>
 
       <style>{`
+        @keyframes arrowPulse {
+          0%, 100% {
+            transform: scale(1) translateX(0);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+          }
+          15% {
+            transform: scale(1.1) translateX(5px);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            border-color: transparent;
+            color: var(--bg-dark);
+          }
+          30% {
+            transform: scale(1) translateX(0);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+          }
+        }
         .nav-arrow:hover {
           background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
           border-color: transparent;
           color: var(--bg-dark);
           transform: scale(1.15);
           box-shadow: 0 0 60px rgba(0, 240, 255, 0.5);
+          animation: none !important;
         }
         .book-card:hover .book-arrow {
           background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));

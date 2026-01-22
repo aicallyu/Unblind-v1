@@ -121,13 +121,19 @@ export default function Stats() {
                   backgroundClip: 'text',
                 }}
               >
-                {counters[index]}{stat.suffix}
+                ~{counters[index]}{stat.suffix}
               </div>
               <div
                 className="stat-label font-mono text-xs tracking-[0.15em] uppercase"
                 style={{ color: 'var(--text-muted)' }}
               >
                 {t.stats.items[stat.key]}
+              </div>
+              <div
+                className="stat-estimated font-mono text-[10px] mt-1"
+                style={{ color: 'var(--text-muted)', opacity: 0.6 }}
+              >
+                ({t.stats.estimated || 'estimated'})
               </div>
             </div>
           ))}
