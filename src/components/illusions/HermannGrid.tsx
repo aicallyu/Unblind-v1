@@ -34,7 +34,7 @@ export default function HermannGrid() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="perception-section py-[120px] relative flex flex-col justify-center" id="hermann-test">
+    <section ref={sectionRef} className="perception-section py-20 relative flex flex-col justify-center" id="hermann-test">
       <div className="perception-container text-center max-w-[900px] mx-auto px-10">
         <h2
           className="perception-title font-display text-4xl font-extrabold mb-4"

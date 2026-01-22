@@ -78,9 +78,17 @@ export default function Library() {
   const startAutoPlay = useCallback(() => {
     if (autoPlayRef.current) clearInterval(autoPlayRef.current)
     autoPlayRef.current = setInterval(() => {
-      goToBook(currentIndex + 1)
-    }, 5000)
-  }, [currentIndex, goToBook])
+      setCurrentIndex(prev => {
+        if (isAnimating.current) return prev
+        isAnimating.current = true
+        const newIndex = prev >= totalBooks - 1 ? 0 : prev + 1
+        setTimeout(() => {
+          isAnimating.current = false
+        }, 800)
+        return newIndex
+      })
+    }, 4000)
+  }, [totalBooks])
 
   const stopAutoPlay = useCallback(() => {
     if (autoPlayRef.current) {
@@ -127,7 +135,8 @@ export default function Library() {
       document.removeEventListener('keydown', handleKeyDown)
       stopAutoPlay()
     }
-  }, [positionBooks, startAutoPlay, stopAutoPlay, goToBook, currentIndex])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const bookColors = [
     'linear-gradient(180deg, var(--accent-cyan), var(--accent-blue))',
@@ -141,7 +150,7 @@ export default function Library() {
   return (
     <section
       ref={sectionRef}
-      className="library-section py-[200px] min-h-screen flex flex-col justify-center relative"
+      className="library-section py-24 min-h-screen flex flex-col justify-center relative"
       id="library"
     >
       {/* Background glow */}

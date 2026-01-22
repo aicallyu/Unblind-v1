@@ -39,10 +39,10 @@ export default function Subscribe() {
   }
 
   return (
-    <section ref={sectionRef} className="subscribe-section py-40" id="subscribe">
+    <section ref={sectionRef} className="subscribe-section py-24" id="subscribe">
       <div className="container">
         <div
-          className="subscribe-box py-[110px] px-[90px] text-center relative overflow-hidden rounded-[36px]"
+          className="subscribe-box py-16 px-12 text-center relative overflow-hidden rounded-[36px]"
           style={{
             background: 'linear-gradient(145deg, rgba(0, 240, 255, 0.06), rgba(168, 85, 247, 0.04))',
             border: '1px solid rgba(0, 240, 255, 0.2)',
