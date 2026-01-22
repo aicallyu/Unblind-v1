@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { articles } from '@/data/articles'
+import { useLanguage } from '@/i18n'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -12,6 +13,7 @@ export default function Library() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const isAnimating = useRef(false)
   const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const { t } = useLanguage()
 
   const totalBooks = articles.length
   const angleStep = 360 / totalBooks
@@ -145,7 +147,7 @@ export default function Library() {
           className="library-label font-mono text-xs tracking-[0.3em] uppercase mb-6 inline-flex items-center gap-5"
           style={{ color: 'var(--accent-cyan)' }}
         >
-          FEATURED POSTS
+          {t.library.label}
         </div>
         <h2
           className="library-title font-display text-[64px] font-black tracking-tight"
@@ -159,7 +161,7 @@ export default function Library() {
             letterSpacing: '-0.03em',
           }}
         >
-          Start here
+          {t.library.title}
         </h2>
       </div>
 

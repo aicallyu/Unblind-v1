@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useLanguage } from '@/i18n'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function MullerLyer() {
   const sectionRef = useRef<HTMLElement>(null)
   const [revealed, setRevealed] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     if (!sectionRef.current) return
@@ -40,14 +42,14 @@ export default function MullerLyer() {
         <h2
           className="perception-title font-display text-4xl font-extrabold mb-4"
         >
-          Which Line Is Longer?
+          {t.illusions.mullerLyer.title}
         </h2>
 
         <p
           className="perception-subtitle text-[17px] mb-[50px] max-w-[600px] mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Your brain lies to you constantly. Here's proof.
+          {t.illusions.mullerLyer.subtitle}
         </p>
 
         <div
@@ -93,7 +95,7 @@ export default function MullerLyer() {
               }}
               onClick={() => setRevealed(true)}
             >
-              REVEAL THE TRUTH
+              {t.illusions.mullerLyer.reveal}
             </button>
           )}
 
@@ -107,8 +109,7 @@ export default function MullerLyer() {
             }}
           >
             <p className="m-0 text-base" style={{ color: 'var(--text-primary)' }}>
-              <strong style={{ color: 'var(--accent-cyan)' }}>Both lines are exactly the same length.</strong>{' '}
-              The arrow directions trick your brain into perceiving different lengths. This is the Müller-Lyer illusion—and it works even when you know the truth.
+              {t.illusions.mullerLyer.instruction}
             </p>
           </div>
         </div>

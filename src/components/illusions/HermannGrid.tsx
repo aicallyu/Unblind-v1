@@ -1,11 +1,13 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useLanguage } from '@/i18n'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function HermannGrid() {
   const sectionRef = useRef<HTMLElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     if (!sectionRef.current) return
@@ -37,14 +39,14 @@ export default function HermannGrid() {
         <h2
           className="perception-title font-display text-4xl font-extrabold mb-4"
         >
-          The Hermann Grid
+          {t.illusions.hermannGrid.title}
         </h2>
 
         <p
           className="perception-subtitle text-[17px] mb-[50px] max-w-[600px] mx-auto"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Focus on any white intersection. Do you see gray dots at the intersections you're NOT looking at?
+          {t.illusions.hermannGrid.subtitle}
         </p>
 
         <div
@@ -79,8 +81,8 @@ export default function HermannGrid() {
           }}
         >
           <p className="m-0 text-[15px] leading-[1.7]" style={{ color: 'var(--text-secondary)' }}>
-            <strong style={{ color: 'var(--accent-cyan)' }}>What's happening:</strong>{' '}
-            You perceive dark spots at intersections you're not directly looking at, but they vanish when you focus on them. This is lateral inhibition—your retinal ganglion cells suppress signals from neighboring areas, creating phantom darkness where none exists. You're literally hallucinating in plain sight.
+            <strong style={{ color: 'var(--accent-cyan)' }}>{t.illusions.hermannGrid.whatsHappening}:</strong>{' '}
+            {t.illusions.hermannGrid.instruction}
           </p>
         </div>
       </div>

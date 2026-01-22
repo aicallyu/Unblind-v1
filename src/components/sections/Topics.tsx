@@ -1,10 +1,19 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { topics } from '@/data/articles'
 import { useLanguage } from '@/i18n'
 
 gsap.registerPlugin(ScrollTrigger)
+
+const topicIcons = ['◐', '◯', '⊘', '◈', '◎', '⬡']
+const topicKeys = [
+  'perceptionReality',
+  'blindSpots',
+  'decisionErrors',
+  'communicationMismatch',
+  'powerSystems',
+  'aiPerceptionLayer',
+] as const
 
 export default function Topics() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -105,45 +114,48 @@ export default function Topics() {
             perspective: '2000px',
           }}
         >
-          {topics.map((topic, index) => (
-            <div
-              key={topic.title}
-              className="topic-card py-[52px] px-10 rounded-[28px] relative overflow-hidden cursor-pointer backdrop-blur-[10px] transition-all duration-500 group"
-              style={{
-                background: 'linear-gradient(145deg, rgba(15, 15, 22, 0.9), rgba(8, 8, 14, 0.95))',
-                border: '1px solid rgba(255, 255, 255, 0.05)',
-              }}
-            >
-              {/* Top border on hover */}
+          {topicKeys.map((key, index) => {
+            const topic = t.topics.items[key]
+            return (
               <div
-                className="absolute top-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                key={key}
+                className="topic-card py-[52px] px-10 rounded-[28px] relative overflow-hidden cursor-pointer backdrop-blur-[10px] transition-all duration-500 group"
                 style={{
-                  background: 'linear-gradient(90deg, var(--accent-cyan), var(--accent-purple))',
-                }}
-              />
-
-              <div
-                className="topic-icon w-20 h-20 rounded-[22px] flex items-center justify-center text-[40px] mb-8 transition-transform duration-400 group-hover:scale-110 group-hover:-rotate-[5deg]"
-                style={{
-                  background: `linear-gradient(145deg, ${iconColors[index]?.bg})`,
-                  boxShadow: `0 0 40px ${iconColors[index]?.shadow}`,
+                  background: 'linear-gradient(145deg, rgba(15, 15, 22, 0.9), rgba(8, 8, 14, 0.95))',
+                  border: '1px solid rgba(255, 255, 255, 0.05)',
                 }}
               >
-                {topic.icon}
-              </div>
+                {/* Top border on hover */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                  style={{
+                    background: 'linear-gradient(90deg, var(--accent-cyan), var(--accent-purple))',
+                  }}
+                />
 
-              <div className="topic-title font-display text-[26px] font-bold mb-4 transition-colors duration-300 group-hover:text-[var(--accent-cyan)]">
-                {topic.title}
-              </div>
+                <div
+                  className="topic-icon w-20 h-20 rounded-[22px] flex items-center justify-center text-[40px] mb-8 transition-transform duration-400 group-hover:scale-110 group-hover:-rotate-[5deg]"
+                  style={{
+                    background: `linear-gradient(145deg, ${iconColors[index]?.bg})`,
+                    boxShadow: `0 0 40px ${iconColors[index]?.shadow}`,
+                  }}
+                >
+                  {topicIcons[index]}
+                </div>
 
-              <div
-                className="topic-desc text-base leading-[1.75]"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                {topic.description}
+                <div className="topic-title font-display text-[26px] font-bold mb-4 transition-colors duration-300 group-hover:text-[var(--accent-cyan)]">
+                  {topic.title}
+                </div>
+
+                <div
+                  className="topic-desc text-base leading-[1.75]"
+                  style={{ color: 'var(--text-secondary)' }}
+                >
+                  {topic.description}
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
 
