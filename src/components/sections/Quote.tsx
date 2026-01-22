@@ -66,7 +66,7 @@ export default function Quote({ words, author }: QuoteProps) {
   return (
     <section
       ref={sectionRef}
-      className="quote-section py-[100px] relative flex items-center justify-center min-h-[60vh]"
+      className="quote-section py-16 relative flex items-center justify-center min-h-[40vh]"
     >
       <div
         className="quote-bg absolute w-full h-full"

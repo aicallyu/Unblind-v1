@@ -84,7 +84,7 @@ export default function Topics() {
   ]
 
   return (
-    <section ref={sectionRef} className="topics-section py-40 relative" id="topics">
+    <section ref={sectionRef} className="topics-section py-24 relative" id="topics">
       <div className="container">
         <div className="section-header mb-20">
           <div

@@ -74,7 +74,7 @@ export default function Sequence() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="sequence-section py-40 relative" id="sequence">
+    <section ref={sectionRef} className="sequence-section py-24 relative" id="sequence">
       <div className="container">
         <div className="section-header mb-20">
           <div

@@ -53,7 +53,7 @@ export default function Posts() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="posts-section py-40 relative" id="posts">
+    <section ref={sectionRef} className="posts-section py-24 relative" id="posts">
       <div className="container">
         <div className="section-header mb-20">
           <div

@@ -72,7 +72,7 @@ export default function Stats() {
   return (
     <section
       ref={sectionRef}
-      className="stats-section py-[120px]"
+      className="stats-section py-20"
       style={{
         background: 'linear-gradient(180deg, transparent, rgba(0, 240, 255, 0.02), transparent)',
       }}
