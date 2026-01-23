@@ -6,7 +6,7 @@ import { useLanguage } from '@/i18n'
 gsap.registerPlugin(ScrollTrigger)
 
 // n8n Webhook URL - replace with your actual webhook URL after importing the workflow
-const WEBHOOK_URL = import.meta.env.VITE_SUBSCRIBE_WEBHOOK_URL || 'https://your-n8n-instance.com/webhook/xp-subscribe'
+const WEBHOOK_URL = 'https://n8n-nzgas-u27047.vm.elestio.app/webhook/xp-subscribe'
 
 type SubmitStatus = 'idle' | 'sending' | 'success' | 'error'
 
@@ -50,6 +50,7 @@ export default function Subscribe() {
     setStatus('sending')
 
     try {
+      console.log('Sending subscription to:', WEBHOOK_URL)
       const response = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: {
@@ -64,6 +65,8 @@ export default function Subscribe() {
         }),
       })
 
+      console.log('Response status:', response.status)
+
       if (response.ok) {
         setStatus('success')
         setName('')
@@ -71,9 +74,12 @@ export default function Subscribe() {
         // Reset to idle after 5 seconds
         setTimeout(() => setStatus('idle'), 5000)
       } else {
+        const text = await response.text()
+        console.error('Subscription failed:', response.status, text)
         throw new Error('Subscription failed')
       }
-    } catch {
+    } catch (err) {
+      console.error('Subscription error:', err)
       setStatus('error')
       // Reset to idle after 4 seconds
       setTimeout(() => setStatus('idle'), 4000)
