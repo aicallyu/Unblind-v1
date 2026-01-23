@@ -50,6 +50,7 @@ export default function Subscribe() {
     setStatus('sending')
 
     try {
+      console.log('Sending subscription to:', WEBHOOK_URL)
       const response = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: {
@@ -64,6 +65,8 @@ export default function Subscribe() {
         }),
       })
 
+      console.log('Response status:', response.status)
+
       if (response.ok) {
         setStatus('success')
         setName('')
@@ -71,9 +74,12 @@ export default function Subscribe() {
         // Reset to idle after 5 seconds
         setTimeout(() => setStatus('idle'), 5000)
       } else {
+        const text = await response.text()
+        console.error('Subscription failed:', response.status, text)
         throw new Error('Subscription failed')
       }
-    } catch {
+    } catch (err) {
+      console.error('Subscription error:', err)
       setStatus('error')
       // Reset to idle after 4 seconds
       setTimeout(() => setStatus('idle'), 4000)
