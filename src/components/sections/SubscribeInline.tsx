@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLanguage } from '@/i18n'
 
-const WEBHOOK_URL = import.meta.env.VITE_SUBSCRIBE_WEBHOOK_URL || 'https://your-n8n-instance.com/webhook/xp-subscribe'
+const WEBHOOK_URL = 'https://n8n-nzgas-u27047.vm.elestio.app/webhook/xp-subscribe'
 
 type SubmitStatus = 'idle' | 'sending' | 'success' | 'error'
 
